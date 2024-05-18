@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>programa que leia as medidas dos lados de um triângulo</title>
+</head>
+
+<body>
+    <script>
+        // Entrada de Dados
+        const medida01 = parseInt(prompt('Digite a primeira medida do triângulo: '));
+        const medida02 = parseInt(prompt('Digite a segunda medida do triângulo:  '));
+        const medida03 = parseInt(prompt('Digite a terceira medida do triângulo:  '))
+
+        // Processamento
+
+        // Verifica se os três lados do triângulo são iguais.
+        if (medida01 == medida02 && medida01 == medida03) {
+
+            //saida de dados
+            alert(`Triângulo é equilátero: Possui os 3 lados iguais. `);
+        }
+
+        // Verifica se os dois lados do triângulo são iguais.
+        else if (medida01 == medida02 || medida01 == medida03 || medida02 == medida03) {
+        
+            //saida de dados
+            alert(`Triângulo é isósceles: Possui 2 lados iguais. `);
+        }
+
+        // Verifica se os três lados do triângulo são diferentes.
+        else if (medida01 != medida02 && medida01 != medida03 && medida02 != medida03) {
+
+            //saida de dados
+            alert(`Triângulo é escaleno: Possui 3 lados diferentes. `);
+        }
+    </script>
+
+</body>
+
+</html>

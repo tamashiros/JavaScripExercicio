@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Um posto está vendendo combustíveis com a seguinte tabela de descontos</title>
+</head>
+
+<body>
+    <script>
+        // Entrada de dados
+        alert(`
+        Bem vindo ao posto do Perdigão, escolha uma opção abaixo:
+        [ 1 ] - Álcool
+        [ 2 ] - Gasolina
+        `)
+        const opcaocombustivel = parseInt(prompt('Informe a opção desejada para abastecer?  '));
+
+        // Condição para validar se numero digitado é maior que o numero de opções.
+        if (opcaocombustivel > 2) {
+            alert("Opção invalida");
+            process.exit();
+
+        }
+
+
+        const quantlitros = parseInt(prompt('Qual a quantidade de litros que deseja abastecer? '));
+        const valoralcool = 4.90;
+        const valorgasolina = 5.30;
+
+        //Processamento
+
+
+        switch (opcaocombustivel) {
+            // Opção Álcool
+            case 1:
+                // Saída de dados
+
+                // Desconto menor ou igual a 20 litros de alcool
+                if (quantlitros <= 20) {
+                    let valortotal = valoralcool * quantlitros
+                    let descontoate20l = valortotal * 0.03;
+                    let valortotaldesc = valortotal - descontoate20l
+                    alert(`Opção ${opcaocombustivel}  =  Álcool - Desconto de 3% - O valor a ser pago é de: R$ ${valortotaldesc} `);
+
+                }
+                // Desconto maior que 20 litros de alcool
+                else if (quantlitros > 20) {
+                    let valortotal = valoralcool * quantlitros
+                    let descontoacima20l = valortotal * 0.05;
+                    let valortotaldesc = valortotal - descontoacima20l
+                    alert(`Opção ${opcaocombustivel}  =  Álcool - Desconto de 5% - O valor a ser pago é de: R$ ${valortotaldesc} `);
+
+                }
+
+                break;
+
+            // Opção Gasolina
+            case 2:
+
+                // Saída de dados
+
+                // Desconto menor ou igual a 20 litros de gasolina
+                if (quantlitros <= 20) {
+                    let valortotal = valorgasolina * quantlitros
+                    let descontoate20l = valortotal * 0.04;
+                    let valortotaldesc = valortotal - descontoate20l
+                    alert(`Opção ${opcaocombustivel}  =  Gasolina - Desconto de 4% - O valor a ser pago é de: R$ ${valortotaldesc} `);
+
+                }
+                // Desconto maior que 20 litros de gasolina
+                else if (quantlitros > 20) {
+                    let valortotal = valorgasolina * quantlitros
+                    let descontoacima20l = valortotal * 0.06;
+                    let valortotaldesc = valortotal - descontoacima20l
+                    alert(`Opção ${opcaocombustivel}  =  Gasolina - Desconto de 6% - O valor a ser pago é de: R$ ${valortotaldesc} `);
+
+                }
+
+
+                break;
+
+
+            default:
+                // Saida de dados
+
+                alert("Opção invalida")
+
+
+
+                break;
+        }
+
+
+    </script>
+
+</body>
+
+</html>

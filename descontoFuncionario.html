@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uma loja fornece 10% de desconto para funcionários e 5% de desconto para clientes vips.</title>
+</head>
+
+<body>
+    <script>
+
+        //Entrada de dados
+
+        // Estas opçoes são literal templates - Função do java script para pular linhas, da para colocar funçoes.
+        alert(`
+         Bem vindo a loja do Perdigão, escolha uma opção para atendimento:
+         [ 1 ] - Cliente
+         [ 2 ] - Funcionário
+         [ 3 ] - Vip
+         `)
+        const opcaoUsuario = Number(prompt("Digite a opção de atendimento:  "));
+        const valordacompra = parseInt(prompt('Informe o valor total da compra: '));
+
+
+
+        // Processamento de dados
+        switch (opcaoUsuario) {
+            case 1:
+                // Saída de dados
+                alert(`A Opção de atendimento selecionada é: ${opcaoUsuario}  -  Cliente -  Não haverá desconto.`);
+
+                break;
+            case 2:
+
+                let valordescfunc = valordacompra * 0.10;
+                let valortotalfunc = valordacompra - valordescfunc;
+                // Saída de dados
+                alert(`A Opção de atendimento selecionada é: ${opcaoUsuario}  -  Funcionário - Desconto de 10%  -  Velor a ser pago: ${valortotalfunc}.`);
+
+
+                break;
+            case 3:
+
+                let valordescvip = valordacompra * 0.05;
+                let valortotalvip = valordacompra - valordescvip;
+                // Saída de dados
+                alert(`A Opção de atendimento selecionada é: ${opcaoUsuario}  -  Vip - Desconto de 5%  -  Velor a ser pago: ${valortotalvip}.`);
+
+
+                break;
+
+
+
+
+            default:
+                // Saida de dados
+                alert("Opção invalida")
+                break;
+        }
+
+
+
+
+    </script>
+
+</body>
+
+</html>

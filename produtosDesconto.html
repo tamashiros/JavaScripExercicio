@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desconto em produtos</title>
+</head>
+
+<body>
+    <script>
+
+        // Entrada de daods
+        const nomeproduto = prompt('Informe o nome do produto: ');
+        const qtdproduto = parseInt(prompt('Informe a quantidade do produto: '));
+        const precounitario = Number(prompt('Informe o valor do preço unitário: '));
+
+
+        // Processamento
+
+        // Desconto menor igual a 5
+        if (qtdproduto <= 5) {
+            let valortotalproduto = qtdproduto * precounitario;
+            let desconto = valortotalproduto * 0.02;
+            let totalapagar = valortotalproduto - desconto;
+
+            // Saída de dados
+            alert(`O produto escolhido foi:  ${nomeproduto} - A quantidade do produto:  ${qtdproduto} - Preço unitário do produto:  R$ ${precounitario} - O valor total:  R$ ${valortotalproduto} - Desconto de 2% - Valor a ser pago com desconto:  R$ ${totalapagar}`);
+
+
+        } else if (qtdproduto > 5 && qtdproduto <= 10) {
+            let valortotalproduto = qtdproduto * precounitario;
+            let desconto = valortotalproduto * 0.03;
+            let totalapagar = valortotalproduto - desconto;
+
+            // Saída de dados
+            alert(`O produto escolhido foi:  ${nomeproduto} - A quantidade do produto:  ${qtdproduto} - Preço unitário do produto:  R$ ${precounitario} - O valor total:  R$ ${valortotalproduto} - Desconto de 3% - Valor a ser pago com desconto:  R$ ${totalapagar}`);
+
+
+        } else if (qtdproduto > 10) {
+            let valortotalproduto = qtdproduto * precounitario;
+            let desconto = valortotalproduto * 0.05;
+            let totalapagar = valortotalproduto - desconto;
+
+            // Saída de dados
+            alert(`O produto escolhido foi:  ${nomeproduto} - A quantidade do produto:  ${qtdproduto} - Preço unitário do produto:  R$ ${precounitario} - O valor total:  R$ ${valortotalproduto} - Desconto de 5% - Valor a ser pago com desconto:  R$ ${totalapagar}`);
+
+        }
+    </script>
+</body>
+
+</html>

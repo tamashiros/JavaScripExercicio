@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Busca de Nomes</title>
+</head>
+<body>
+    <h1>Cadastro e Busca de Nomes</h1>
+
+    <div id="input-section">
+        <label for="name-input">Nome:</label>
+        <input type="text" id="name-input">
+        <button onclick="addName()">Adicionar Nome</button>
+    </div>
+
+    <h2>Nomes Cadastrados:</h2>
+    <ul id="names-list"></ul>
+
+    <div id="search-section" style="display:none;">
+        <h2>Buscar Nome</h2>
+        <label for="search-input">Nome para buscar:</label>
+        <input type="text" id="search-input">
+        <button onclick="searchName()">Buscar</button>
+    </div>
+
+    <h3 id="result"></h3>
+
+    <script>
+        const names = [];
+        const maxNames = 10;
+
+        function addName() {
+            const nameInput = document.getElementById('name-input');
+            const name = nameInput.value.trim();
+            
+            if (name) {
+                if (names.length < maxNames) {
+                    names.push(name);
+                    updateNamesList();
+                    nameInput.value = '';
+                    nameInput.focus();
+
+                    if (names.length === maxNames) {
+                        document.getElementById('input-section').style.display = 'none';
+                        document.getElementById('search-section').style.display = 'block';
+                    }
+                } else {
+                    alert('Você já inseriu os 10 nomes.');
+                }
+            } else {
+                alert('Por favor, insira um nome válido.');
+            }
+        }
+
+        function updateNamesList() {
+            const namesList = document.getElementById('names-list');
+            namesList.innerHTML = '';
+            names.forEach(name => {
+                const listItem = document.createElement('li');
+                listItem.textContent = name;
+                namesList.appendChild(listItem);
+            });
+        }
+
+        function searchName() {
+            const searchInput = document.getElementById('search-input');
+            const searchName = searchInput.value.trim();
+            const result = document.getElementById('result');
+            
+            if (searchName) {
+                if (names.includes(searchName)) {
+                    result.textContent = 'ACHEI';
+                } else {
+                    result.textContent = 'NÃO ACHEI';
+                }
+            } else {
+                alert('Por favor, insira um nome para buscar.');
+            }
+        }
+    </script>
+</body>
+</html>

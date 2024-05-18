@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="BR-pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desenvolva um programa que recebe do usuário, o placar de um jogo de futebol (os gols de cada time) e informa se o resultado foi um empate, se a vitória foi do primeiro time ou do segundo time.</title>
+</head>
+<body>
+    <script>
+        // Entrada de dados
+        const timeum = prompt('Informe o primeiro time: ');
+        const timedois = prompt('Informe o segundo time: ');
+        const placartimeum = parseInt(prompt('Informe o placar do primeiro time: '));
+        const placartimedois = parseInt(prompt('Informe o placar do segundo time: '));
+
+        // Processamento
+        if (placartimeum == placartimedois) {
+
+            // Saída de dados
+            alert(`O resultado do jogo entre ${timeum} e ${timedois} foi: Empate`);
+            
+        }
+        else if (placartimeum > placartimedois ) {
+
+             // Saída de dados
+            alert(`O placar do jogo ficou em: ${placartimeum}  X  ${placartimedois} :   A vitória do jogo foi do time: ${timeum} e o ${timedois} perdeu o jogo.`);
+        }
+        else if (placartimeum < placartimedois) {
+
+             // Saída de dados
+             alert(`O placar do jogo ficou em: ${placartimeum}  X  ${placartimedois} :   A vitória do jogo foi do time: ${timedois} e o ${timeum} perdeu o jogo.`);
+        }
+
+
+    </script>
+</body>
+</html>

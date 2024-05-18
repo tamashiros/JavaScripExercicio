@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="PT-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imprimir na tela a taxa de mortalidade ou natalidade</title>
+</head>
+
+<body>
+    <script>
+        alert(` Escolha a opção de um indicador para ralizar o cálculo:
+        [ 1 ] - Natalidade
+        [ 2 ] - Mortalidade
+
+        `)
+
+
+        // Entrada de dados
+        const opçaoindicador = parseInt(prompt('Informe a opção que deseja calcular: '));
+        // Condição para validar se numero digitado é maior que o numero de opções.
+        if (opçaoindicador > 2) {
+            alert("Opção invalida");
+            process.exit();
+
+        }
+
+
+
+
+
+        // Processamento
+        switch (opçaoindicador) {
+            case 1:
+                // Entrada de dados
+                const nascidas = parseInt(prompt('Informe o número de crianças nascidas em 2023: '));
+
+                // Saida de dados
+                let taxanatalidade = (nascidas * 1000) / 211.000;
+                alert(`A taxa de natalidade no ano de 2023 é de: ${taxanatalidade}`);
+
+
+                break;
+
+            case 2:
+                // Entrada de dados
+                const obitos = parseInt(prompt('Informe o números de mortalidade no ano de 2023:  '));
+
+                // Saida de dados
+                let taxamortalidade = (obitos * 1000) / 211.000;
+                alert(`A taxa de mortalidade no ano de 2023 é de: ${taxamortalidade}`);
+
+                break;
+
+            default:
+                break;
+        }
+
+
+    </script>
+
+</body>
+
+</html>
